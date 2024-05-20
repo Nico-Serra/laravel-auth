@@ -34,7 +34,8 @@
                                 <td>
                                     <a href="{{ route('admin.projects.show', $project) }}"
                                         class="btn btn-dark btn-sm">👁‍🗨View</a>
-                                    /Edit/Delit
+                                        <a href="{{ route('admin.projects.edit', $project) }}"
+                                        class="btn btn-dark btn-sm">🖊Edit</a>/Delite
                                 </td>
                             </tr>
                         @empty
