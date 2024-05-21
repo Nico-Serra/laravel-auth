@@ -21,7 +21,8 @@
                             <th scope="col">Cover Image</th>
                             <th scope="col">Name</th>
                             <th scope="col">Slug</th>
-                            <th scope="col">Link</th>
+                            <th scope="col">Site</th>
+                            <th scope="col">Code</th>
                             <th scope="col">Project Date</th>
                             <th scope="col">Actions</th>
                         </tr>
@@ -33,7 +34,8 @@
                                 <td><img src="{{ $project->cover_image }}" alt="{{ $project->name }}" width="100"></td>
                                 <td>{{ $project->name }}</td>
                                 <td>{{ $project->slug }}</td>
-                                <td><a href="{{ $project->link }}" class="btn btn-dark btn-sm ">Go to link</a></td>
+                                <td><a href="{{ $project->link }}" class="btn btn-dark btn-sm ">🌍 Site</a></td>
+                                <td><a href="{{ $project->link_code }}" class="btn btn-dark btn-sm ">Code</a></td>
                                 <td>{{ $project->project_date }}</td>
                                 <td>
                                     <a href="{{ route('admin.projects.show', $project) }}"
@@ -98,7 +100,7 @@
                         @empty
 
                             <tr class="">
-                                <td scope="row" colspan="7">Nothing Found</td>
+                                <td scope="row" colspan="8">Nothing Found</td>
 
                             </tr>
                         @endforelse

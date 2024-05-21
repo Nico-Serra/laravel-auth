@@ -29,6 +29,14 @@
             </div>
 
             <div class="mb-3">
+                <label for="link_code" class="form-label">link_code</label>
+                <input type="text" class="form-control @error('link_code') is-invalid @enderror" name="link_code"
+                    id="link_code" aria-describedby="link_codehelpId" placeholder="//http:"
+                    value="{{ old('link_code') }}" />
+                <small id="link_codehelpId" class="form-text text-muted">Insert your project link_code</small>
+            </div>
+
+            <div class="mb-3">
                 <label for="project_date" class="form-label">date</label>
                 <input type="date" class="form-control @error('date') is-invalid @enderror" name="project_date"
                     id="project_date" aria-describedby="datehelpId" value="{{ old('project_date') }}" />

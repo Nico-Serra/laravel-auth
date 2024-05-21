@@ -26,10 +26,17 @@
             </div>
 
             <div class="mb-3">
-                <label for="link" class="form-label">link</label>
+                <label for="link" class="form-label">link site</label>
                 <input type="text" class="form-control @error('link') is-invalid @enderror" name="link" id="link"
                     aria-describedby="linkhelpId" placeholder="//http:" value="{{ old('link', $project->link) }}" />
                 <small id="linkhelpId" class="form-text text-muted">Insert your project link</small>
+            </div>
+
+            <div class="mb-3">
+                <label for="link_code" class="form-label">link_code site</label>
+                <input type="text" class="form-control @error('link_code') is-invalid @enderror" name="link_code" id="link_code"
+                    aria-describedby="link_codehelpId" placeholder="//http:" value="{{ old('link_code', $project->link_code) }}" />
+                <small id="link_codehelpId" class="form-text text-muted">Insert your project link code</small>
             </div>
 
             <div class="mb-3">
