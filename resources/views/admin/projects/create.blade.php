@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container py-5">
-        @include('layouts.partials.validations-errors')
+        @include('partials.validations-errors')
 
         <form action="{{ route('admin.projects.store') }}" method="post">
             @csrf
@@ -30,8 +30,8 @@
 
             <div class="mb-3">
                 <label for="project_date" class="form-label">date</label>
-                <input type="date" class="form-control @error('date') is-invalid @enderror" name="project_date" id="project_date"
-                    aria-describedby="datehelpId" value="{{ old('project_date') }}" />
+                <input type="date" class="form-control @error('date') is-invalid @enderror" name="project_date"
+                    id="project_date" aria-describedby="datehelpId" value="{{ old('project_date') }}" />
                 <small id="datehelpId" class="form-text text-muted">Insert your project date</small>
             </div>
 

@@ -8,7 +8,11 @@
             <a href="{{ route('admin.projects.create') }}" class="btn btn-secondary  ">Add Project</a>
         </div>
 
+
+
         <div class="container">
+                @include('partials.message')
+
             <div class="table-responsive">
                 <table class="table table-secondary">
                     <thead>

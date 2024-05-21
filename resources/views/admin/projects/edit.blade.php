@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container py-5">
-        @include('layouts.partials.validations-errors')
+        @include('partials.validations-errors')
 
         <form action="{{ route('admin.projects.update', $project) }}" method="post">
             @csrf
