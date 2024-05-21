@@ -34,8 +34,8 @@
 
             <div class="mb-3">
                 <label for="project_date" class="form-label">project_date</label>
-                <input type="project_date" class="form-control @error('project_date') is-invalid @enderror"
-                    project_date="project_date" id="project_date" aria-describedby="project_datehelpId"
+                <input type="date" class="form-control @error('project_date') is-invalid @enderror" name="project_date"
+                    id="project_date" aria-describedby="project_datehelpId"
                     value="{{ old('project_date', $project->project_date) }}" />
                 <small id="project_datehelpId" class="form-text text-muted">Insert your project date</small>
             </div>

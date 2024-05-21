@@ -29,9 +29,9 @@
             </div>
 
             <div class="mb-3">
-                <label for="date" class="form-label">date</label>
-                <input type="date" class="form-control @error('date') is-invalid @enderror" date="date" id="date"
-                    aria-describedby="datehelpId" value="{{ old('date') }}" />
+                <label for="project_date" class="form-label">date</label>
+                <input type="date" class="form-control @error('date') is-invalid @enderror" name="project_date" id="project_date"
+                    aria-describedby="datehelpId" value="{{ old('project_date') }}" />
                 <small id="datehelpId" class="form-text text-muted">Insert your project date</small>
             </div>
 
