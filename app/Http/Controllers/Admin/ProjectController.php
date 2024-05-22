@@ -7,6 +7,7 @@ use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ProjectController extends Controller
@@ -45,6 +46,12 @@ class ProjectController extends Controller
         //dd($slug);
 
         $val_data['slug'] = $slug;
+
+        $image_path = Storage::put('uploads', $val_data['cover_image']);
+
+        $val_data['cover_image'] = $image_path;
+
+        //dd($val_data);
 
         Project::create($val_data);
 

@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 
+
 @section('content')
     <section class="bg-light py-3">
         <div class="container d-flex align-items-center justify-content-between py-3">
@@ -11,7 +12,7 @@
 
 
         <div class="container">
-                @include('partials.message')
+            @include('partials.message')
 
             <div class="table-responsive">
                 <table class="table table-secondary">
@@ -31,7 +32,12 @@
                         @forelse ($projects as $project)
                             <tr class="">
                                 <td scope="row">{{ $project->id }}</td>
-                                <td><img src="{{ $project->cover_image }}" alt="{{ $project->name }}" width="100"></td>
+                                @if (Str::startsWith($project->cover_image, 'https://'))
+                                    <td><img src="{{ $project->cover_image }}" alt="" width="150"></td>
+                                @else
+                                    <td><img src="{{ asset('storage/' . $project->cover_image) }}" alt=""
+                                            width="150"></td>
+                                @endif
                                 <td>{{ $project->name }}</td>
                                 <td>{{ $project->slug }}</td>
                                 <td><a href="{{ $project->link }}" class="btn btn-dark btn-sm ">🌍 Site</a></td>
