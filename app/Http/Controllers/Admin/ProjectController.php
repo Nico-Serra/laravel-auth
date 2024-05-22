@@ -47,9 +47,11 @@ class ProjectController extends Controller
 
         $val_data['slug'] = $slug;
 
-        $image_path = Storage::put('uploads', $val_data['cover_image']);
+        if ($request->has('cover_image')) {
+            $image_path = Storage::put('uploads', $val_data['cover_image']);
 
-        $val_data['cover_image'] = $image_path;
+            $val_data['cover_image'] = $image_path;
+        }
 
         //dd($val_data);
 
@@ -91,6 +93,23 @@ class ProjectController extends Controller
 
         $val_data['slug'] = $slug;
 
+        //dd($val_data['cover_image']);
+
+        //dd($request->has('cover_image'));
+
+        if ($request->has('cover_image')) {
+
+            if ($project->cover_image) {
+                Storage::delete($project->cover_image);
+            }
+
+            $image_path = Storage::put('uploads', $val_data['cover_image']);
+
+            $val_data['cover_image'] = $image_path;
+
+            //dd($image_path, $val_data);
+        }
+
         $project->update($val_data);
 
         return to_route('admin.projects.index')->with('message', $project->name . ' updated with success');
@@ -103,6 +122,11 @@ class ProjectController extends Controller
     {
 
         //dd($project);
+
+        if ($project->cover_image) {
+            Storage::delete($project->cover_image);
+        }
+
         $project->delete();
 
         return back()->with('message', $project->name . ' deleted with success');

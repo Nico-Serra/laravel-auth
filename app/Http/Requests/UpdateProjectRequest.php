@@ -26,7 +26,7 @@ class UpdateProjectRequest extends FormRequest
             //'slug' => 'required|min:5|max:100',
             'link' => 'nullable|min:15|max:255',
             'link_code' => 'nullable|min:15|max:255',
-            'cover_image' => 'nullable|min:15|max:255',
+            'cover_image' => 'nullable',
             'project_date' => 'nullable',
         ];
     }

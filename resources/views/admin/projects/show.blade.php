@@ -3,7 +3,11 @@
 @section('content')
     <div class="container py-5 text-center text-center">
         <div class="col">
-            <img src="{{ $project->cover_image }}" alt="">
+            @if (Str::startsWith($project->cover_image, 'https://'))
+                <img src="{{ $project->cover_image }}" alt="" class="img-fluid ">
+            @else
+                <img src="{{ asset('storage/' . $project->cover_image) }}" alt="" class="img-fluid ">
+            @endif
         </div>
         <div class="col text-center">
             <h2 class="mb-3">{{ $project->name }}</h2>
